@@ -14,7 +14,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/solid";
 
-export default function StickyNavbar() {
+export default function FixedNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -88,7 +88,7 @@ export default function StickyNavbar() {
       <Navbar
         variant="gradient"
         color="deep-orange"
-        className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-4 xl:px-10 from-deep-orange-500 to-yellow-500"
+        className="fixed top-0 z-10 h-max max-w-full rounded-none px-4 py-4 xl:px-10 from-deep-orange-500 to-yellow-500"
       >
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
