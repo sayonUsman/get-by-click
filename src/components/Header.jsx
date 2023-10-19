@@ -3,7 +3,7 @@ import { Button } from "@material-tailwind/react";
 
 const Header = () => {
   return (
-    <div className="absolute mt-16">
+    <div className="mt-16">
       <img src={banner} alt="Banner Image" className="w-full"></img>
 
       <Button
