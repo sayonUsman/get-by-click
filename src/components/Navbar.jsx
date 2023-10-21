@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   Navbar,
   Collapse,
@@ -32,9 +33,12 @@ export default function FixedNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <NavLink
+          to="/all"
+          className="flex items-center hover:border-b-2 border-blue-gray-900"
+        >
           All
-        </a>
+        </NavLink>
       </Typography>
 
       <Typography
@@ -43,9 +47,12 @@ export default function FixedNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <NavLink
+          to="/gift-carts"
+          className="flex items-center hover:border-b-2 border-blue-gray-900"
+        >
           Gift Carts
-        </a>
+        </NavLink>
       </Typography>
 
       <Typography
@@ -54,9 +61,12 @@ export default function FixedNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <NavLink
+          to="/track-order"
+          className="flex items-center hover:border-b-2 border-blue-gray-900"
+        >
           Track Order
-        </a>
+        </NavLink>
       </Typography>
 
       <Typography
@@ -65,9 +75,12 @@ export default function FixedNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <NavLink
+          to="/returns"
+          className="flex items-center hover:border-b-2 border-blue-gray-900"
+        >
           Returns
-        </a>
+        </NavLink>
       </Typography>
 
       <Typography
@@ -76,9 +89,12 @@ export default function FixedNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <NavLink
+          to="/help-center"
+          className="flex items-center hover:border-b-2 border-blue-gray-900"
+        >
           Help Center
-        </a>
+        </NavLink>
       </Typography>
     </ul>
   );
@@ -141,40 +157,46 @@ export default function FixedNavbar() {
               </form>
             </div>
 
-            <Tooltip
-              content="Log In"
-              placement="bottom-end"
-              className="rounded"
-            >
-              <IconButton color="amber" className="rounded mr-2 xl:mr-3">
-                <UserIcon className="h-full w-full" />
-              </IconButton>
-            </Tooltip>
+            <NavLink to="/login">
+              <Tooltip
+                content="Log In"
+                placement="bottom-end"
+                className="rounded"
+              >
+                <IconButton color="amber" className="rounded mr-2 xl:mr-3">
+                  <UserIcon className="h-full w-full" />
+                </IconButton>
+              </Tooltip>
+            </NavLink>
 
-            <Tooltip
-              content="Wishlist"
-              placement="bottom-end"
-              className="rounded"
-            >
-              <IconButton color="amber" className="rounded mr-2 xl:mr-3">
-                <HeartIcon className="h-full w-full" />
-              </IconButton>
-            </Tooltip>
+            <NavLink to="/wishlist">
+              <Tooltip
+                content="Wishlist"
+                placement="bottom-end"
+                className="rounded"
+              >
+                <IconButton color="amber" className="rounded mr-2 xl:mr-3">
+                  <HeartIcon className="h-full w-full" />
+                </IconButton>
+              </Tooltip>
+            </NavLink>
 
             <Badge
               content="0"
               color="white"
               className="text-blue-gray-900 mr-3 xl:mr-0"
             >
-              <Tooltip
-                content="Cart"
-                placement="bottom-end"
-                className="rounded"
-              >
-                <IconButton color="amber" className="rounded mr-3 xl:mr-0">
-                  <ShoppingCartIcon className="h-full w-full" />
-                </IconButton>
-              </Tooltip>
+              <NavLink to="/cart">
+                <Tooltip
+                  content="Cart"
+                  placement="bottom-end"
+                  className="rounded"
+                >
+                  <IconButton color="amber" className="rounded mr-3 xl:mr-0">
+                    <ShoppingCartIcon className="h-full w-full" />
+                  </IconButton>
+                </Tooltip>
+              </NavLink>
             </Badge>
 
             <IconButton
