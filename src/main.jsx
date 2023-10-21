@@ -2,18 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { ThemeProvider } from "@material-tailwind/react";
-import FixedNavbar from "./components/Navbar";
-import Header from "./components/Header";
-import Collection from "./components/collection";
-import Footer from "./components/Footer";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/Routes";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
-      <FixedNavbar />
-      <Header></Header>
-      <Collection></Collection>
-      <Footer></Footer>
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>
 );
