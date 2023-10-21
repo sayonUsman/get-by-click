@@ -5,6 +5,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import FixedNavbar from "./components/Navbar";
 import Header from "./components/Header";
 import Collection from "./components/collection";
+import Footer from "./components/Footer";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <FixedNavbar />
       <Header></Header>
       <Collection></Collection>
+      <Footer></Footer>
     </ThemeProvider>
   </React.StrictMode>
 );
