@@ -38,6 +38,7 @@ export default function LoginCard() {
             <Input
               label="Email"
               type="email"
+              autoComplete="email"
               size="lg"
               {...register("email", { required: true })}
             />
@@ -46,6 +47,7 @@ export default function LoginCard() {
             <Input
               label="Password"
               type="password"
+              autoComplete="current-password"
               size="lg"
               {...register("password", { required: true })}
             />

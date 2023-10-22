@@ -38,6 +38,7 @@ export default function SignUpCard() {
             <Input
               label="Name"
               type="text"
+              autoComplete="username"
               size="lg"
               {...register("name", { required: true })}
             />
@@ -46,6 +47,7 @@ export default function SignUpCard() {
             <Input
               label="Email"
               type="email"
+              autoComplete="email"
               size="lg"
               {...register("email", { required: true })}
             />
@@ -54,6 +56,7 @@ export default function SignUpCard() {
             <Input
               label="Phone"
               type="tel"
+              autoComplete="tel"
               size="lg"
               {...register("phone", { required: true })}
             />
@@ -62,6 +65,7 @@ export default function SignUpCard() {
             <Input
               label="Password"
               type="password"
+              autoComplete="new-password"
               size="lg"
               {...register("password", { required: true })}
             />
