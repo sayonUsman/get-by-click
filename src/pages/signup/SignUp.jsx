@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-export default function LoginCard() {
+export default function SignUpCard() {
   const {
     register,
     handleSubmit,
@@ -29,12 +29,20 @@ export default function LoginCard() {
           className="mb-4 grid h-28 place-items-center rounded-none from-deep-orange-500 to-yellow-500"
         >
           <Typography variant="h3" className="text-blue-gray-900">
-            SIGN IN
+            SIGN UP
           </Typography>
         </CardHeader>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <CardBody className="flex flex-col gap-4">
+            <Input
+              label="Name"
+              type="text"
+              size="lg"
+              {...register("name", { required: true })}
+            />
+            {errors.name && <span>This field is required!</span>}
+
             <Input
               label="Email"
               type="email"
@@ -42,6 +50,14 @@ export default function LoginCard() {
               {...register("email", { required: true })}
             />
             {errors.email && <span>This field is required!</span>}
+
+            <Input
+              label="Phone"
+              type="tel"
+              size="lg"
+              {...register("phone", { required: true })}
+            />
+            {errors.phone && <span>This field is required!</span>}
 
             <Input
               label="Password"
@@ -62,13 +78,13 @@ export default function LoginCard() {
               fullWidth
               className="from-yellow-500 to-deep-orange-500 text-blue-gray-900 rounded-none"
             >
-              <input type="submit" value="SIGN IN" className="w-full" />
+              <input type="submit" value="SIGN UP" className="w-full" />
             </Button>
 
             <Typography variant="small" className="mt-6 flex justify-center">
-              Don&apos;t have an account?
+              Already have an account!
               <span className="ml-1 font-bold">
-                <Link to="/sign-up">SIGN UP</Link>
+                <Link to="/login">SIGN IN</Link>
               </span>
             </Typography>
           </CardFooter>
