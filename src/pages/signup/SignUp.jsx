@@ -28,8 +28,8 @@ export default function SignUpCard() {
           color="deep-orange"
           className="mb-4 grid h-28 place-items-center rounded-none from-deep-orange-500 to-yellow-500"
         >
-          <Typography variant="h3" className="text-blue-gray-900">
-            SIGN UP
+          <Typography variant="h5" className="text-blue-gray-900">
+            GET BY CLICK
           </Typography>
         </CardHeader>
 
