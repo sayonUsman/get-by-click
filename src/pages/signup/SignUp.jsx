@@ -70,6 +70,17 @@ export default function SignUpCard() {
             draggable: false,
           });
         }
+      })
+      .catch((error) => {
+        toast.update(toastId.current, {
+          render: error.message,
+          type: "error",
+          autoClose: 5000,
+          hideProgressBar: false,
+          pauseOnHover: true,
+          closeOnClick: false,
+          draggable: false,
+        });
       });
   };
 
