@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRef } from "react";
+import { DefaultSpeedDial } from "../../components/SpeedDial";
 
 export default function LoginCard() {
   const {
@@ -142,6 +143,8 @@ export default function LoginCard() {
         rtl={false}
         theme="colored"
       />
+
+      <DefaultSpeedDial />
     </>
   );
 }
