@@ -1,7 +1,7 @@
 import banner from "../assets/Banner.png";
 import { Button } from "@material-tailwind/react";
 
-const Header = () => {
+const HeaderBanner = () => {
   return (
     <div className="mt-12">
       <img src={banner} alt="Banner Image" className="w-full"></img>
@@ -16,4 +16,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderBanner;

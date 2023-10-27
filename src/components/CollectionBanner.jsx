@@ -1,7 +1,7 @@
 import banner from "../assets/collection-banner.png";
 import { Button } from "@material-tailwind/react";
 
-const Collection = () => {
+const CollectionBanner = () => {
   return (
     <div className="sm:mt-3 md:mt-5 lg:mt-7">
       <img src={banner} alt="Banner Image" className="w-full"></img>
@@ -16,4 +16,4 @@ const Collection = () => {
   );
 };
 
-export default Collection;
+export default CollectionBanner;

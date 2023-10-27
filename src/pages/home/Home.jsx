@@ -1,11 +1,11 @@
-import Header from "../../components/Header";
-import Collection from "../../components/Collection";
+import HeaderBanner from "../../components/HeaderBanner";
+import CollectionBanner from "../../components/CollectionBanner";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <Collection />;
+      <HeaderBanner />
+      <CollectionBanner />
     </>
   );
 };
