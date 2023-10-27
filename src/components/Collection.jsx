@@ -10,7 +10,7 @@ const Collection = () => {
         variant="gradient"
         className="rounded from-brown-500 to-gray-50 text-blue-gray-900 font-blod -mt-20 ml-2 md:-mt-24 md:ml-4"
       >
-        Shop Now!
+        Explore Now!
       </Button>
     </div>
   );

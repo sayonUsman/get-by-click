@@ -10,7 +10,7 @@ const Header = () => {
         variant="gradient"
         className="rounded from-deep-orange-500 to-yellow-500 text-blue-gray-900 -mt-20 ml-2 md:-mt-24 md:ml-4"
       >
-        Explore Now!
+        Shop Now!
       </Button>
     </div>
   );
