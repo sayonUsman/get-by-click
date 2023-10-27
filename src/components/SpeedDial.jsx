@@ -18,8 +18,8 @@ export function DefaultSpeedDial() {
   return (
     <div className="fixed bottom-2 right-3">
       <SpeedDial>
-        <SpeedDialHandler color="white">
-          <IconButton size="lg" className="rounded-full">
+        <SpeedDialHandler>
+          <IconButton size="lg" className="rounded-full bg-black">
             <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
           </IconButton>
         </SpeedDialHandler>
