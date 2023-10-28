@@ -6,7 +6,7 @@ const CollectionBanner = () => {
   const navigate = useNavigate();
 
   const navigateTo = () => {
-    navigate("/collection");
+    navigate("/collection", { replace: true });
   };
 
   return (

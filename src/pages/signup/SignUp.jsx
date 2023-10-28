@@ -58,7 +58,7 @@ export default function SignUpCard() {
 
           localStorage.setItem("user-info", JSON.stringify(userInfo));
           reset();
-          navigate("/");
+          navigate("/", { replace: true });
           window.location.reload(false);
         } else if (userData.isEmailRegistered) {
           toast.update(toastId.current, {

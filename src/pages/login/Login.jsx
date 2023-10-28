@@ -51,7 +51,7 @@ export default function LoginCard() {
 
           localStorage.setItem("user-info", JSON.stringify(userInfo));
           reset();
-          navigate("/");
+          navigate("/", { replace: true });
           window.location.reload(false);
         } else {
           toast.update(toastId.current, {
