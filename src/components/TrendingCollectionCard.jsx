@@ -6,7 +6,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-const CollectionCart = ({ collection }) => {
+const TrendingCollectionCard = ({ trendingCollection }) => {
   return (
     <div className="flex justify-center items-center">
       <Card
@@ -18,7 +18,7 @@ const CollectionCart = ({ collection }) => {
           shadow={false}
           color="transparent"
           style={{
-            backgroundImage: `url(${collection?.url})`,
+            backgroundImage: `url(${trendingCollection?.url})`,
           }}
           className={`absolute inset-0 m-0 h-full w-full rounded-none bg-cover bg-center`}
         >
@@ -27,7 +27,7 @@ const CollectionCart = ({ collection }) => {
 
         <CardBody className="relative py-14 px-6 md:px-12">
           <Typography variant="h5" className="mb-4 text-gray-400">
-            ${collection.price}
+            ${trendingCollection?.price}
           </Typography>
 
           <Button
@@ -42,4 +42,4 @@ const CollectionCart = ({ collection }) => {
   );
 };
 
-export default CollectionCart;
+export default TrendingCollectionCard;

@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import banner from "../assets/collection-banner.png";
 import { Button } from "@material-tailwind/react";
 
-const CollectionBanner = () => {
+const TrendingCollectionBanner = () => {
   const navigate = useNavigate();
 
   const navigateTo = () => {
-    navigate("/collection", { replace: true });
+    navigate("/trending-collections", { replace: true });
   };
 
   return (
@@ -24,4 +24,4 @@ const CollectionBanner = () => {
   );
 };
 
-export default CollectionBanner;
+export default TrendingCollectionBanner;

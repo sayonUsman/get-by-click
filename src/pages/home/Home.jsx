@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import HeaderBanner from "../../components/HeaderBanner";
-import CollectionBanner from "../../components/CollectionBanner";
+import TrendingCollectionBanner from "../../components/TrendingCollectionBanner";
 import SectionTitle from "../../components/SectionTitle";
 import NewSection from "../../components/NewSection";
 
@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <>
       <HeaderBanner />
-      <CollectionBanner />
+      <TrendingCollectionBanner />
 
       <SectionTitle title={"new arrivals"} />
       <NewSection
