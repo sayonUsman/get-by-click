@@ -3,7 +3,7 @@ import Main from "../layout/Main";
 import Home from "../pages/home/Home";
 import LoginCard from "../pages/login/Login";
 import SignUpCard from "../pages/signup/SignUp";
-import TrendingCollection from "../pages/trendingCollection/TrendingCollection";
+import TrendingCollections from "../pages/trendingCollections/TrendingCollections";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/trending-collections",
-        element: <TrendingCollection />,
+        element: <TrendingCollections />,
         loader: async () => fetch("http://localhost:5000/trending-collections"),
       },
     ],

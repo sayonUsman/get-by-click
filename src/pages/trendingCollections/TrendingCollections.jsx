@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import TrendingCollectionCard from "../../components/TrendingCollectionCard";
 
-const TrendingCollection = () => {
+const TrendingCollections = () => {
   const trendingCollections = useLoaderData();
 
   return (
@@ -16,4 +16,4 @@ const TrendingCollection = () => {
   );
 };
 
-export default TrendingCollection;
+export default TrendingCollections;
