@@ -18,7 +18,11 @@ const ExhibitionCard = ({ collection, btnText, link }) => {
   return (
     <div className="flex justify-center items-center">
       <Card className="mt-6 w-96 md:w-11/12 bg-gradient-to-b from-blue-gray-100 to-white rounded-none">
-        <CardHeader color="blue-gray" className="relative h-56 rounded-none">
+        <CardHeader
+          color="blue-gray"
+          floated={false}
+          className="relative h-56 rounded-none"
+        >
           <img
             src={collection?.url}
             alt={collection.title}

@@ -34,8 +34,8 @@ export default function FixedNavbar() {
         className="p-1 font-normal"
       >
         <NavLink
-          to="/all"
-          className="flex items-center hover:border-b-2 border-blue-gray-900"
+          to="/all/all-collections"
+          className="flex items-center w-fit hover:border-b-2 border-blue-gray-900"
         >
           All
         </NavLink>
@@ -49,7 +49,7 @@ export default function FixedNavbar() {
       >
         <NavLink
           to="/gift-carts"
-          className="flex items-center hover:border-b-2 border-blue-gray-900"
+          className="flex items-center w-fit hover:border-b-2 border-blue-gray-900"
         >
           Gift Carts
         </NavLink>
@@ -63,7 +63,7 @@ export default function FixedNavbar() {
       >
         <NavLink
           to="/track-order"
-          className="flex items-center hover:border-b-2 border-blue-gray-900"
+          className="flex items-center w-fit hover:border-b-2 border-blue-gray-900"
         >
           Track Order
         </NavLink>
@@ -77,7 +77,7 @@ export default function FixedNavbar() {
       >
         <NavLink
           to="/returns"
-          className="flex items-center hover:border-b-2 border-blue-gray-900"
+          className="flex items-center w-fit hover:border-b-2 border-blue-gray-900"
         >
           Returns
         </NavLink>
@@ -91,7 +91,7 @@ export default function FixedNavbar() {
       >
         <NavLink
           to="/help-center"
-          className="flex items-center hover:border-b-2 border-blue-gray-900"
+          className="flex items-center w-fit hover:border-b-2 border-blue-gray-900"
         >
           Help Center
         </NavLink>
