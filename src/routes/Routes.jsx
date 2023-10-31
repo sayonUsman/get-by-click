@@ -16,11 +16,6 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/trending-collections",
-        element: <TrendingCollections />,
-        loader: async () => fetch("http://localhost:5000/trending-collections"),
-      },
     ],
   },
 
@@ -28,6 +23,11 @@ const router = createBrowserRouter([
     path: "/all",
     element: <Secondary />,
     children: [
+      {
+        path: "trending-collections",
+        element: <TrendingCollections />,
+        loader: async () => fetch("http://localhost:5000/trending-collections"),
+      },
       {
         path: "all-collections",
         element: <AllCollections />,

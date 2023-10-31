@@ -6,7 +6,7 @@ const TrendingCollectionBanner = () => {
   const navigate = useNavigate();
 
   const navigateTo = () => {
-    navigate("/trending-collections", { replace: true });
+    navigate("/all/trending-collections", { replace: true });
   };
 
   return (
