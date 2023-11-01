@@ -31,21 +31,21 @@ const Home = () => {
       <NewSection
         collections={newCollections}
         btnText={"Check Out Now"}
-        link={"/new-collections"}
+        link={"/all/new-collections"}
       />
 
       <SectionTitle title={"popular trending"} />
       <NewSection
         collections={popularCollections}
         btnText={"Explore More"}
-        link={"/popular-collections"}
+        link={"/all/popular-collections"}
       />
 
       <SectionTitle title={"what's cool"} />
       <NewSection
         collections={coolCollections}
         btnText={"Shop Now"}
-        link={"/cool-collections"}
+        link={"/all/cool-collections"}
       />
     </>
   );

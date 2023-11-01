@@ -6,6 +6,7 @@ import SignUpCard from "../pages/signup/SignUp";
 import TrendingCollections from "../pages/trendingCollections/TrendingCollections";
 import Secondary from "../layout/Secondary";
 import AllCollections from "../pages/allCollections/allCollections";
+import Collection from "../pages/collection/Collection";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,21 @@ const router = createBrowserRouter([
         path: "all-collections",
         element: <AllCollections />,
         loader: async () => fetch("http://localhost:5000/all-collections"),
+      },
+      {
+        path: "new-collections",
+        element: <Collection />,
+        loader: async () => fetch("http://localhost:5000/new-collections"),
+      },
+      {
+        path: "popular-collections",
+        element: <Collection />,
+        loader: async () => fetch("http://localhost:5000/popular-collections"),
+      },
+      {
+        path: "cool-collections",
+        element: <Collection />,
+        loader: async () => fetch("http://localhost:5000/cool-collections"),
       },
     ],
   },
