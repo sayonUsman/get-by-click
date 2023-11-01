@@ -4,11 +4,7 @@ import PrimaryCollectionsLayout from "../../components/PrimaryCollectionsLayout"
 const AllCollections = () => {
   const allCollections = useLoaderData();
 
-  return (
-    <>
-      <PrimaryCollectionsLayout allCollections={allCollections} />
-    </>
-  );
+  return <PrimaryCollectionsLayout collections={allCollections} />;
 };
 
 export default AllCollections;
