@@ -3,6 +3,7 @@ import HeaderBanner from "../../components/HeaderBanner";
 import TrendingCollectionBanner from "../../components/TrendingCollectionBanner";
 import SectionTitle from "../../components/SectionTitle";
 import NewSection from "../../components/NewSection";
+import Loader from "../../components/Loader";
 
 const Home = () => {
   const [newCollections, setNewCollections] = useState(null);
@@ -28,25 +29,37 @@ const Home = () => {
       <TrendingCollectionBanner />
 
       <SectionTitle title={"new arrivals"} />
-      <NewSection
-        collections={newCollections}
-        btnText={"Check Out Now"}
-        link={"/all/new-collections"}
-      />
+      {newCollections ? (
+        <NewSection
+          collections={newCollections}
+          btnText={"Check Out Now"}
+          link={"/all/new-collections"}
+        />
+      ) : (
+        <Loader />
+      )}
 
       <SectionTitle title={"popular trending"} />
-      <NewSection
-        collections={popularCollections}
-        btnText={"Explore More"}
-        link={"/all/popular-collections"}
-      />
+      {newCollections ? (
+        <NewSection
+          collections={popularCollections}
+          btnText={"Explore More"}
+          link={"/all/popular-collections"}
+        />
+      ) : (
+        <Loader />
+      )}
 
       <SectionTitle title={"what's cool"} />
-      <NewSection
-        collections={coolCollections}
-        btnText={"Shop Now"}
-        link={"/all/cool-collections"}
-      />
+      {newCollections ? (
+        <NewSection
+          collections={coolCollections}
+          btnText={"Shop Now"}
+          link={"/all/cool-collections"}
+        />
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };
