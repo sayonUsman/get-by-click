@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   Navbar,
   Collapse,
@@ -16,7 +16,15 @@ import {
 } from "@heroicons/react/24/solid";
 
 export default function FixedNavbar() {
+  const navigate = useNavigate();
+  let userInfo = localStorage.getItem("user-info");
   const [openNav, setOpenNav] = React.useState(false);
+
+  if (userInfo) {
+    userInfo = JSON.parse(userInfo);
+  } else {
+    userInfo = false;
+  }
 
   React.useEffect(() => {
     window.addEventListener(
@@ -24,6 +32,12 @@ export default function FixedNavbar() {
       () => window.innerWidth >= 1140 && setOpenNav(false)
     );
   }, []);
+
+  const handleLogOut = () => {
+    localStorage.removeItem("user-info");
+    navigate("/login");
+    window.location.reload(false);
+  };
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 xl:mb-0 xl:mt-0 xl:flex-row xl:items-center xl:gap-6">
@@ -96,6 +110,37 @@ export default function FixedNavbar() {
           Help Center
         </NavLink>
       </Typography>
+
+      {userInfo ? (
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+        >
+          <NavLink
+            to="/login"
+            onClick={handleLogOut}
+            className="flex items-center w-fit hover:border-b-2 border-blue-gray-900"
+          >
+            Log Out
+          </NavLink>
+        </Typography>
+      ) : (
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+        >
+          <NavLink
+            to="/login"
+            className="flex items-center w-fit hover:border-b-2 border-blue-gray-900"
+          >
+            Login
+          </NavLink>
+        </Typography>
+      )}
     </ul>
   );
 
@@ -157,17 +202,19 @@ export default function FixedNavbar() {
               </form>
             </div>
 
-            <NavLink to="/login">
-              <Tooltip
-                content="Log In"
-                placement="bottom-end"
-                className="rounded"
-              >
-                <IconButton color="amber" className="rounded mr-2 xl:mr-3">
-                  <UserIcon className="h-full w-full" />
-                </IconButton>
-              </Tooltip>
-            </NavLink>
+            {userInfo && (
+              <NavLink to="/profile">
+                <Tooltip
+                  content="Profile"
+                  placement="bottom-end"
+                  className="rounded"
+                >
+                  <IconButton color="amber" className="rounded mr-2 xl:mr-3">
+                    <UserIcon className="h-full w-full" />
+                  </IconButton>
+                </Tooltip>
+              </NavLink>
+            )}
 
             <NavLink to="/wishlist">
               <Tooltip
