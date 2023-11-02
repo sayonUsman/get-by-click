@@ -1,21 +1,38 @@
 import { Typography } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const SITEMAP = [
   {
     title: "Company",
-    links: ["About Us", "Careers", "Our Team"],
+    links: [
+      { title: "About Us", path: "" },
+      { title: "Careers", path: "" },
+      { title: "Our Team", path: "" },
+    ],
   },
   {
     title: "Help Center",
-    links: ["Discord", "Twitter", "Contact Us"],
+    links: [
+      { title: "Discord", path: "" },
+      { title: "Twitter", path: "" },
+      { title: "Contact Us", path: "" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Blog", "Newsletter", "Free Products"],
+    links: [
+      { title: "Blog", path: "" },
+      { title: "Newsletter", path: "" },
+      { title: "Free Products", path: "" },
+    ],
   },
   {
     title: "Products",
-    links: ["New Collection", "New Arrivals", "Low Prices"],
+    links: [
+      { title: "Popular Collection", path: "/all/popular-collections" },
+      { title: "New Arrivals", path: "/all/new-collections" },
+      { title: "Low Prices", path: "" },
+    ],
   },
 ];
 
@@ -44,9 +61,12 @@ export default function Footer() {
                     color="blue-gray"
                     className="font-normal"
                   >
-                    <a className="inline-block py-1 pr-2 transition-transform hover:scale-105">
-                      {link}
-                    </a>
+                    <Link
+                      to={link.path}
+                      className="inline-block py-1 pr-2 transition-transform hover:scale-105"
+                    >
+                      {link.title}
+                    </Link>
                   </Typography>
                 ))}
               </ul>
