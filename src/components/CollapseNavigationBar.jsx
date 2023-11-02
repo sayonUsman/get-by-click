@@ -8,6 +8,7 @@ import {
   List,
   ListItem,
   Checkbox,
+  Radio,
 } from "@material-tailwind/react";
 
 export default function CollapseNavigationBar() {
@@ -83,15 +84,15 @@ export default function CollapseNavigationBar() {
 
         <List>
           <ListItem className="py-1">
-            <Checkbox label="Men" />
+            <Radio name="type" label="Men" />
           </ListItem>
 
           <ListItem className="py-1">
-            <Checkbox label="Women" />
+            <Radio name="type" label="Women" />
           </ListItem>
 
           <ListItem className="py-1">
-            <Checkbox label="Kids" />
+            <Radio name="type" label="Kids" />
           </ListItem>
 
           <ListItem className="py-1">

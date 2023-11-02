@@ -5,6 +5,7 @@ import {
   List,
   ListItem,
   Button,
+  Radio,
 } from "@material-tailwind/react";
 import CollapseNavigationBar from "./CollapseNavigationBar";
 
@@ -20,15 +21,15 @@ export default function SideNavbar() {
 
         <List>
           <ListItem className="py-1">
-            <Checkbox label="Men" />
+            <Radio name="type" label="Men" />
           </ListItem>
 
           <ListItem className="py-1">
-            <Checkbox label="Women" />
+            <Radio name="type" label="Women" />
           </ListItem>
 
           <ListItem className="py-1">
-            <Checkbox label="Kids" />
+            <Radio name="type" label="Kids" />
           </ListItem>
 
           <ListItem className="py-1">
