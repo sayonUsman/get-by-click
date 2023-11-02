@@ -7,6 +7,7 @@ import TrendingCollections from "../pages/trendingCollections/TrendingCollection
 import Secondary from "../layout/Secondary";
 import AllCollections from "../pages/allCollections/allCollections";
 import Collection from "../pages/collection/Collection";
+import UpcomingFeatureCard from "../components/UpComingFeatureCard";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,26 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/gift-carts",
+        element: <UpcomingFeatureCard />,
+      },
+      {
+        path: "/track-order",
+        element: <UpcomingFeatureCard />,
+      },
+      {
+        path: "/returns",
+        element: <UpcomingFeatureCard />,
+      },
+      {
+        path: "/help-center",
+        element: <UpcomingFeatureCard />,
+      },
+      {
+        path: "/wishlist",
+        element: <UpcomingFeatureCard />,
       },
     ],
   },
