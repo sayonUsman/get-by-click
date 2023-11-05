@@ -46,7 +46,7 @@ export default function LoginCard() {
         if (existingUserData.isLoginSuccess) {
           const userInfo = {
             isLoginSuccess: true,
-            email: existingUserData.email,
+            email: userData.email,
           };
 
           localStorage.setItem("user-info", JSON.stringify(userInfo));
