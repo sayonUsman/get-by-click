@@ -7,7 +7,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export function ProductCard({ collection }) {
+export default function ItemCard({ collection }) {
   return (
     <div className="flex justify-center items-center">
       <Card className="w-96 rounded-none bg-gradient-to-b from-blue-gray-100 to-white my-1 shadow-md shadow-blue-gray-700">
