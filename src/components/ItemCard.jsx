@@ -12,6 +12,7 @@ export default function ItemCard({
   collection,
   toast,
   toastId,
+  newSuccessToast,
   newInfoToast,
   newErrorToast,
 }) {
@@ -41,6 +42,20 @@ export default function ItemCard({
             if (toast.isActive(toastId.current)) {
               toast.update(toastId.current, {
                 render: "Added To Cart",
+                type: "success",
+                autoClose: 5000,
+                hideProgressBar: false,
+                pauseOnHover: true,
+                closeOnClick: false,
+                draggable: false,
+              });
+            } else {
+              newSuccessToast();
+            }
+          } else if (data.isAdded) {
+            if (toast.isActive(toastId.current)) {
+              toast.update(toastId.current, {
+                render: "This Item Already Added",
                 type: "info",
                 autoClose: 5000,
                 hideProgressBar: false,

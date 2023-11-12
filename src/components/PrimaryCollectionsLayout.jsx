@@ -6,8 +6,17 @@ import "react-toastify/dist/ReactToastify.css";
 const PrimaryCollectionsLayout = ({ collections }) => {
   const toastId = useRef(null);
 
+  const newSuccessToast = () => {
+    toastId.current = toast.success("Added To Cart", {
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      draggable: false,
+    });
+  };
+
   const newInfoToast = () => {
-    toastId.current = toast.info("Added To Cart", {
+    toastId.current = toast.info("This Item Already Added", {
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: false,
@@ -33,6 +42,7 @@ const PrimaryCollectionsLayout = ({ collections }) => {
             collection={collection}
             toast={toast}
             toastId={toastId}
+            newSuccessToast={newSuccessToast}
             newInfoToast={newInfoToast}
             newErrorToast={newErrorToast}
           ></ItemCard>
