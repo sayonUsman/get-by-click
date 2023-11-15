@@ -10,7 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function ItemCard({
-  collection,
+  item,
   toast,
   toastId,
   newSuccessToast,
@@ -137,11 +137,7 @@ export default function ItemCard({
           floated={false}
           className="relative h-72 rounded-none"
         >
-          <img
-            src={collection?.url}
-            alt="card-image"
-            className="h-full w-full"
-          />
+          <img src={item?.url} alt="card-image" className="h-full w-full" />
         </CardHeader>
 
         <CardBody>
@@ -151,7 +147,7 @@ export default function ItemCard({
               variant="small"
               className="font-medium"
             >
-              {collection.title}
+              {item.title}
             </Typography>
 
             <Typography
@@ -159,22 +155,34 @@ export default function ItemCard({
               variant="small"
               className="font-medium"
             >
-              ${collection.price}
+              ${item.price}
             </Typography>
           </div>
 
-          <Typography
-            variant="small"
-            color="gray"
-            className="font-normal opacity-75"
-          >
-            {collection.category} {collection.subcategory}
-          </Typography>
+          <div className="mb-2 flex items-center justify-between">
+            <Typography
+              variant="small"
+              color="gray"
+              className="font-normal opacity-75"
+            >
+              {item.category} {item.subcategory}
+            </Typography>
+
+            {item.offer && (
+              <Typography
+                variant="small"
+                color="gray"
+                className="font-normal text-orange-900"
+              >
+                {item.offer}% OFF
+              </Typography>
+            )}
+          </div>
         </CardBody>
 
         <CardFooter className="pt-0">
           <Button
-            onClick={(event) => handleAddToCart(event, collection)}
+            onClick={(event) => handleAddToCart(event, item)}
             className={`w-full rounded-none bg-white text-blue-gray ${
               isAdded && "shadow-md shadow-deep-orange-500"
             }`}
