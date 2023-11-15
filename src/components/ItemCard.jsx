@@ -7,6 +7,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ItemCard({
   collection,
@@ -17,101 +18,114 @@ export default function ItemCard({
   newErrorToast,
 }) {
   const [isAdded, setIsAdded] = useState();
+  const navigate = useNavigate();
+  let userInfo = localStorage.getItem("user-info");
+
+  if (userInfo) {
+    userInfo = JSON.parse(userInfo);
+  } else {
+    userInfo = false;
+  }
 
   const handleAddToCart = (event, item) => {
-    setIsAdded(!isAdded);
+    if (userInfo) {
+      setIsAdded(!isAdded);
 
-    if (event.target.innerText === "ADD TO CART") {
-      const itemDetails = {
-        id: item._id,
-        title: item.title,
-        url: item.url,
-        price: item.price,
-        category: item.category,
-        subcategory: item.subcategory,
-      };
+      if (event.target.innerText === "ADD TO CART") {
+        const itemDetails = {
+          customerEmail: userInfo.email,
+          itemId: item._id,
+          title: item.title,
+          url: item.url,
+          price: item.price,
+          category: item.category,
+          subcategory: item.subcategory,
+        };
 
-      fetch("http://localhost:5000/selected-item", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(itemDetails),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data._id) {
-            if (toast.isActive(toastId.current)) {
-              toast.update(toastId.current, {
-                render: "Added To Cart",
-                type: "success",
-                autoClose: 5000,
-                hideProgressBar: false,
-                pauseOnHover: true,
-                closeOnClick: false,
-                draggable: false,
-              });
-            } else {
-              newSuccessToast();
-            }
-          } else if (data.isAdded) {
-            if (toast.isActive(toastId.current)) {
-              toast.update(toastId.current, {
-                render: "This Item Already Added",
-                type: "info",
-                autoClose: 5000,
-                hideProgressBar: false,
-                pauseOnHover: true,
-                closeOnClick: false,
-                draggable: false,
-              });
-            } else {
-              newInfoToast();
-            }
-          }
+        fetch("http://localhost:5000/selected-item", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(itemDetails),
         })
-        .catch((err) => {
-          toast.update(toastId.current, {
-            render: err.message,
-            type: "error",
-            autoClose: 5000,
-            hideProgressBar: false,
-            pauseOnHover: true,
-            closeOnClick: false,
-            draggable: false,
-          });
-        });
-    } else if (event.target.innerText === "REMOVE FROM CART") {
-      fetch(`http://localhost:5000/delete-item/${item._id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
-            if (toast.isActive(toastId.current)) {
-              toast.update(toastId.current, {
-                render: "Removed From Cart",
-                type: "error",
-                autoClose: 5000,
-                hideProgressBar: false,
-                pauseOnHover: true,
-                closeOnClick: false,
-                draggable: false,
-              });
-            } else {
-              newErrorToast();
+          .then((res) => res.json())
+          .then((data) => {
+            if (data._id) {
+              if (toast.isActive(toastId.current)) {
+                toast.update(toastId.current, {
+                  render: "Added To Cart",
+                  type: "success",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  pauseOnHover: true,
+                  closeOnClick: false,
+                  draggable: false,
+                });
+              } else {
+                newSuccessToast();
+              }
+            } else if (data.isAdded) {
+              if (toast.isActive(toastId.current)) {
+                toast.update(toastId.current, {
+                  render: "This Item Already Added",
+                  type: "info",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  pauseOnHover: true,
+                  closeOnClick: false,
+                  draggable: false,
+                });
+              } else {
+                newInfoToast();
+              }
             }
-          }
-        })
-        .catch((err) => {
-          toast.update(toastId.current, {
-            render: err.message,
-            type: "error",
-            autoClose: 5000,
-            hideProgressBar: false,
-            pauseOnHover: true,
-            closeOnClick: false,
-            draggable: false,
+          })
+          .catch((err) => {
+            toast.update(toastId.current, {
+              render: err.message,
+              type: "error",
+              autoClose: 5000,
+              hideProgressBar: false,
+              pauseOnHover: true,
+              closeOnClick: false,
+              draggable: false,
+            });
           });
-        });
+      } else if (event.target.innerText === "REMOVE FROM CART") {
+        fetch(`http://localhost:5000/delete-item/${item._id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              if (toast.isActive(toastId.current)) {
+                toast.update(toastId.current, {
+                  render: "Removed From Cart",
+                  type: "error",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  pauseOnHover: true,
+                  closeOnClick: false,
+                  draggable: false,
+                });
+              } else {
+                newErrorToast();
+              }
+            }
+          })
+          .catch((err) => {
+            toast.update(toastId.current, {
+              render: err.message,
+              type: "error",
+              autoClose: 5000,
+              hideProgressBar: false,
+              pauseOnHover: true,
+              closeOnClick: false,
+              draggable: false,
+            });
+          });
+      }
+    } else {
+      navigate("/login");
     }
   };
 
