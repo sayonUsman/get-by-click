@@ -46,6 +46,11 @@ const router = createBrowserRouter([
     element: <Secondary />,
     children: [
       {
+        path: "offer-collections",
+        element: <Collection />,
+        loader: async () => fetch("http://localhost:5000/offer-collections"),
+      },
+      {
         path: "trending-collections",
         element: <TrendingCollections />,
         loader: async () => fetch("http://localhost:5000/trending-collections"),
